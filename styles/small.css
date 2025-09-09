@@ -1,0 +1,150 @@
+:root {
+  --primary: #003366;   /* deep blue */
+  --secondary: #0055aa; /* brighter blue */
+  --accent: #ffcc00;    /* yellow accent */
+  --light: #f5f7fa;     /* light background */
+  --dark: #222;         /* dark text */
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
+  background: var(--light);
+  color: var(--dark);
+  line-height: 1.6;
+}
+
+/* Header */
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: linear-gradient(90deg, var(--primary), var(--secondary));
+  color: #fff;
+  padding: 0.5rem 1rem;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+
+/* Group logo + site name */
+.branding {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  width: 150px;  /* bigger logo */
+  height: auto;
+  margin-right: 1rem;
+}
+
+.site-name {
+  font-weight: bold;
+  font-size: 1.4rem; /* slightly bigger */
+}
+
+#menu {
+  font-size: 1.5rem;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+/* Navigation */
+nav {
+  display: none;
+  flex-direction: column;
+  background: var(--secondary);
+}
+
+nav a {
+  padding: 0.75rem;
+  color: #fff;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(255,255,255,0.2);
+}
+
+nav a:hover {
+  background: var(--accent);
+  color: var(--dark);
+  transition: 0.3s;
+}
+
+nav a.active {
+  background: var(--accent);
+  color: var(--dark);
+  font-weight: bold;
+}
+
+/* Main Content */
+main {
+  padding: 1.5rem;
+}
+
+h1, h2 {
+  color: var(--primary);
+}
+
+/* Buttons */
+button {
+  background: var(--primary);
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  margin: 0.2rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+button:hover {
+  background: var(--accent);
+  color: var(--dark);
+}
+
+/* Course Grid */
+.course-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.course-card {
+  background: white;
+  border-radius: 8px;
+  padding: 1rem;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.course-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+}
+
+.course-card.completed {
+  border-left: 6px solid var(--accent);
+  background: #e6f9e6;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  background: var(--primary);
+  color: #fff;
+  padding: 1rem;
+  margin-top: 2rem;
+}
+
+.social-links a {
+  color: white;
+  margin: 0 0.5rem;
+  font-size: 1.5rem;
+  transition: color 0.3s;
+}
+
+.social-links a:hover {
+  color: var(--accent); /* yellow highlight */
+}

@@ -1,0 +1,28 @@
+@media (min-width: 640px) {
+  nav {
+    display: flex !important;
+    flex-direction: row;
+    gap: 1rem;
+    background: none;
+  }
+
+  #menu {
+    display: none;
+  }
+
+  .course-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  main {
+    max-width: 1000px;
+    margin: auto;
+  }
+
+  .logo {
+    width: 100px;
+    height: auto;
+    margin-right: 10px;
+    vertical-align: middle;
+  }
+}

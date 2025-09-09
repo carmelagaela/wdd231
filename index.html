@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Maria Carmela Gaela | WDD 231 Course Home Page</title>
+  <meta name="description" content="WDD 231 - Course Home Page for Maria Carmela Gaela">
+  <meta name="author" content="Maria Carmela Gaela">
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="styles/small.css">
+  <link rel="stylesheet" href="styles/larger.css">
+
+  <!-- JavaScript -->
+  <script src="scripts/nav.js" defer></script>
+  <script src="scripts/dates.js" defer></script>
+  <script src="scripts/courses.js" defer></script>
+</head>
+<body>
+  <header>
+    <!-- Branding group -->
+    <div class="branding">
+      <img src="images/logo.svg" alt="Site Logo" class="logo">
+      <span class="site-name">Maria Carmela Gaela</span>
+    </div>
+    <button id="menu" aria-label="Menu">&#9776;</button>
+    <nav id="nav">
+      <a href="index.html" class="active">Home</a>
+      <a href="#">Chamber</a>
+      <a href="#">Final</a>
+    </nav>
+  </header>
+
+  <main>
+    <h1>Home</h1>
+
+    <section>
+      <h2>About This Site</h2>
+      <p>This site is my course homepage for WDD 231. It demonstrates responsive design, semantic HTML, CSS, and JavaScript.</p>
+    </section>
+
+    <section>
+      <h2>Certificate Courses</h2>
+      <div class="buttons">
+        <button id="all">All Courses</button>
+        <button id="wdd">WDD Courses</button>
+        <button id="cse">CSE Courses</button>
+      </div>
+      <div id="courseContainer" class="course-grid"></div>
+      <p>Total Credits: <span id="totalCredits">0</span></p>
+    </section>
+
+    <section>
+      <h2>Learning Goals</h2>
+      <p>I want to improve my responsive web design skills, JavaScript programming, and web accessibility practices.</p>
+    </section>
+  </main>
+
+  <footer>
+    <p class="social-links">
+      <a href="https://github.com/yourgithubusername" target="_blank" aria-label="GitHub">
+        <i class="fab fa-github"></i>
+      </a>
+      <a href="https://www.linkedin.com/in/carmela-gaela-enal-866584227/" target="_blank" aria-label="LinkedIn">
+        <i class="fab fa-linkedin"></i>
+      </a>
+      <a href="https://www.facebook.com/carmela.gaela.enal" target="_blank" aria-label="Facebook">
+        <i class="fab fa-facebook"></i>
+      </a>
+    </p>
+    <p>&copy; <span id="year"></span> Maria Carmela Gaela | Philippines</p>
+    <p id="lastModified"></p>
+  </footer>
+
+</body>
+</html>
