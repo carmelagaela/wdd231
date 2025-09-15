@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lucban Chamber of Commerce | Directory</title>
+  <meta name="description" content="Directory of businesses and organizations that are members of the Lucban Chamber of Commerce." />
+  <meta name="author" content="Maria Carmela Gaela Enal" />
+
+  <!-- Favicon -->
+  <link rel="icon" href="images/favicon.ico" type="image/x-icon" />
+
+  <!-- Open Graph / Facebook Meta -->
+  <meta property="og:title" content="Lucban Chamber of Commerce Directory" />
+  <meta property="og:description" content="Explore the directory of businesses, organizations, and services in Lucban, Quezon." />
+  <meta property="og:image" content="images/lucban-town.jpg" />
+  <meta property="og:url" content="https://yourdomain.com/chamber/directory.html" />
+  <meta property="og:type" content="website" />
+
+  <!-- CSS Reset / Normalize -->
+  <link rel="stylesheet" href="css/normalize.css" />
+  <!-- Main Styles -->
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <header>
+    <h1>Lucban Chamber of Commerce</h1>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="discover.html">Discover</a></li>
+        <li><a href="directory.html" class="active">Directory</a></li>
+        <li><a href="join.html">Join</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="directory-controls">
+      <button id="gridBtn">Grid View</button>
+      <button id="listBtn">List View</button>
+    </section>
+
+    <section id="directory" class="grid-view">
+      <!-- Business cards will be inserted here via JavaScript -->
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; <span id="year"></span> Lucban Chamber of Commerce</p>
+    <p>Developed by Maria Carmela Gaela Enal | WDD 231</p>
+    <p>Last Modified: <span id="lastModified"></span></p>
+  </footer>
+
+  <script src="js/scripts.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,58 @@
+[
+  {
+    "name": "Buddy's Restaurant",
+    "address": "Rizal Ave, Lucban, Quezon",
+    "phone": "(042) 540-3394",
+    "website": "https://www.buddys.com.ph",
+    "image": "buddys.jpg",
+    "membership": 3
+  },
+  {
+    "name": "Kamay ni Hesus Pilgrimage Center",
+    "address": "Tayabas-Lucban Rd, Lucban, Quezon",
+    "phone": "(042) 540-2206",
+    "website": "https://kamaynihesus.org",
+    "image": "knh.jpg",
+    "membership": 2
+  },
+  {
+    "name": "Lucban Municipal Hall",
+    "address": "Rizal St, Lucban, Quezon",
+    "phone": "(042) 540-3095",
+    "website": "https://lucban.gov.ph",
+    "image": "municipal.jpg",
+    "membership": 1
+  },
+  {
+    "name": "Eker & Ely Lucban Longganisa",
+    "address": "Quezon Ave, Lucban, Quezon",
+    "phone": "(042) 540-3304",
+    "website": "https://lucbanlongganisa.ph",
+    "image": "longganisa.png",
+    "membership": 2
+  },
+  {
+    "name": "Le Maison de Yelo Lane",
+    "address": "Fidel Rada St. Lucban, Quezon",
+    "phone": "09776208618",
+    "website": "https://yelolane.com",
+    "image": "yelolane.jpg",
+    "membership": 1
+  },
+  {
+    "name": "Samkara Resort",
+    "address": "Majayjay-Lucban Rd, Brgy. Igang, Lucban, Quezon",
+    "phone": "09077454557",
+    "website": "https://www.samkaraph.com",
+    "image": "resort.jpg",
+    "membership": 3
+  },
+  {
+    "name": "Batis Aramin Resort and Hotel",
+    "address": "Barangay Tinamnan, Lucban, Quezon",
+    "phone": "(042) 540-4401",
+    "website": "https://www.shouthotels.com/batis-aramin-resort-and-hotel/",
+    "image": "qsu.png",
+    "membership": 2
+  }
+]
