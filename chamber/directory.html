@@ -18,22 +18,25 @@
   <meta property="og:type" content="website" />
 
   <!-- CSS Reset / Normalize -->
-  <link rel="stylesheet" href="css/normalize.css" />
+  <link rel="stylesheet" href="styles/normalize.css" />
   <!-- Main Styles -->
-  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="stylesheet" href="styles/styles.css" />
 </head>
 <body>
   <header>
-    <h1>Lucban Chamber of Commerce</h1>
-    <nav>
-      <ul class="nav-links">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="discover.html">Discover</a></li>
-        <li><a href="directory.html" class="active">Directory</a></li>
-        <li><a href="join.html">Join</a></li>
-      </ul>
-    </nav>
-  </header>
+    <div class="logo">
+      <img src="images/logo.png" alt="Lucban Chamber Logo" />
+      <h1>Lucban Chamber of Commerce</h1>
+  </div>
+  <nav>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="discover.html">Discover</a></li>
+      <li><a href="directory.html" class="active">Directory</a></li>
+      <li><a href="join.html">Join</a></li>
+    </ul>
+  </nav>
+</header>
 
   <main>
     <section class="directory-controls">
@@ -52,6 +55,7 @@
     <p>Last Modified: <span id="lastModified"></span></p>
   </footer>
 
-  <script src="js/scripts.js" defer></script>
+  <!-- Corrected JS path -->
+  <script src="scripts/scripts.js" defer></script>
 </body>
 </html>
