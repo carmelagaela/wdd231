@@ -1,0 +1,89 @@
+/* normalize.css | Custom Reset + Accessibility for Lucban Chamber Project */
+
+/* Reset margins and paddings */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Base HTML adjustments */
+html {
+  line-height: 1.15; /* Improve readability */
+  -webkit-text-size-adjust: 100%; /* Prevent iOS text resize */
+  scroll-behavior: smooth; /* Smooth scrolling */
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  background-color: #fff;
+  color: #222;
+  line-height: 1.6;
+}
+
+/* Headings inherit font-size by default */
+h1, h2, h3, h4, h5, h6 {
+  font-size: inherit;
+  font-weight: normal;
+}
+
+/* Lists */
+ul, ol {
+  list-style: none;
+}
+
+/* Links */
+a {
+  background-color: transparent;
+  text-decoration: none;
+  color: inherit;
+}
+
+a:focus,
+a:hover {
+  text-decoration: underline; /* Visible hover */
+}
+
+/* Focus outline for accessibility */
+:focus {
+  outline: 2px solid #1976d2; /* Blue focus ring */
+  outline-offset: 2px;
+}
+
+/* Images */
+img {
+  border-style: none;
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Forms */
+button,
+input,
+select,
+textarea {
+  font: inherit;
+  margin: 0;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+/* Improve button accessibility */
+button:focus,
+button:hover {
+  outline: 2px solid #1976d2;
+  outline-offset: 2px;
+}
+
+/* Tables */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 100%;
+}
