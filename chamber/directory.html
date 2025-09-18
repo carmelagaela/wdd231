@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Lucban Chamber of Commerce | Directory</title>
   <meta name="description" content="Directory of businesses and organizations that are members of the Lucban Chamber of Commerce." />
   <meta name="author" content="Maria Carmela Gaela Enal" />
+  <meta name="theme-color" content="#004d40" />
 
   <!-- Favicon -->
   <link rel="icon" href="images/favicon.ico" type="image/x-icon" />
@@ -17,26 +18,29 @@
   <meta property="og:url" content="https://yourdomain.com/chamber/directory.html" />
   <meta property="og:type" content="website" />
 
-  <!-- CSS Reset / Normalize -->
-  <link rel="stylesheet" href="styles/normalize.css" />
-  <!-- Main Styles -->
-  <link rel="stylesheet" href="styles/styles.css" />
+  <!-- CSS Reset / Normalize (preloaded) -->
+  <link rel="preload" href="styles/normalize.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="styles/normalize.css"></noscript>
+
+  <!-- Main Styles (preloaded) -->
+  <link rel="preload" href="styles/styles.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="styles/styles.css"></noscript>
 </head>
 <body>
   <header>
     <div class="logo">
-      <img src="images/logo.png" alt="Lucban Chamber Logo" />
+      <img src="images/logo.webp" alt="Lucban Chamber Logo" width="40" height="40" />
       <h1>Lucban Chamber of Commerce</h1>
-  </div>
-  <nav>
-    <ul class="nav-links">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="discover.html">Discover</a></li>
-      <li><a href="directory.html" class="active">Directory</a></li>
-      <li><a href="join.html">Join</a></li>
-    </ul>
-  </nav>
-</header>
+    </div>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="discover.html">Discover</a></li>
+        <li><a href="directory.html" class="active">Directory</a></li>
+        <li><a href="join.html">Join</a></li>
+      </ul>
+    </nav>
+  </header>
 
   <main>
     <section class="directory-controls">
@@ -55,7 +59,6 @@
     <p>Last Modified: <span id="lastModified"></span></p>
   </footer>
 
-  <!-- Corrected JS path -->
   <script src="scripts/scripts.js" defer></script>
 </body>
 </html>

@@ -4,7 +4,7 @@
     "address": "Rizal Ave, Lucban, Quezon",
     "phone": "(042) 540-3394",
     "website": "https://www.buddys.com.ph",
-    "image": "buddys.jpg",
+    "image": "buddys.webp",
     "membership": 3
   },
   {
@@ -12,7 +12,7 @@
     "address": "Tayabas-Lucban Rd, Lucban, Quezon",
     "phone": "(042) 540-2206",
     "website": "https://kamaynihesus.org",
-    "image": "knh.jpg",
+    "image": "knh.webp",
     "membership": 2
   },
   {
@@ -20,7 +20,7 @@
     "address": "Rizal St, Lucban, Quezon",
     "phone": "(042) 540-3095",
     "website": "https://lucban.gov.ph",
-    "image": "municipal.jpg",
+    "image": "municipal.webp",
     "membership": 1
   },
   {
@@ -28,7 +28,7 @@
     "address": "Quezon Ave, Lucban, Quezon",
     "phone": "(042) 540-3304",
     "website": "https://lucbanlongganisa.ph",
-    "image": "longganisa.png",
+    "image": "longganisa.webp",
     "membership": 2
   },
   {
@@ -36,7 +36,7 @@
     "address": "Fidel Rada St. Lucban, Quezon",
     "phone": "09776208618",
     "website": "https://yelolane.com",
-    "image": "yelolane.jpg",
+    "image": "yelolane.webp",
     "membership": 1
   },
   {
@@ -44,7 +44,7 @@
     "address": "Majayjay-Lucban Rd, Brgy. Igang, Lucban, Quezon",
     "phone": "09077454557",
     "website": "https://www.samkaraph.com",
-    "image": "resort.jpg",
+    "image": "resort.webp",
     "membership": 3
   },
   {
@@ -52,7 +52,7 @@
     "address": "Barangay Tinamnan, Lucban, Quezon",
     "phone": "(042) 540-4401",
     "website": "https://www.shouthotels.com/batis-aramin-resort-and-hotel/",
-    "image": "qsu.png",
+    "image": "qsu.webp",
     "membership": 2
   }
 ]
