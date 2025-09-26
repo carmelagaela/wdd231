@@ -144,8 +144,8 @@ nav a {
   padding-bottom: 3px;
 }
 nav a:hover {
-  color: #ffd54f;
-  border-bottom: 2px solid #ffd54f;
+  color: #e6b800;
+  border-bottom: 2px solid #e6b800;
 }
 nav a.active {
   font-weight: bold;
@@ -166,7 +166,7 @@ nav a.active {
 /* Footer */
 footer {
   background: #00332d;
-  color: #e0e0e0;
+  color: #f5f5f5;
   text-align: center;
   padding: 1.5rem;
   margin-top: 3rem;
@@ -188,5 +188,93 @@ footer p {
 }
 footer span {
   font-weight: bold;
-  color: #ffd54f;
+  color: #ffcc00;
+}
+
+/* Hero Section */
+.hero {
+  position: relative;
+  text-align: center;
+  color: white;
+}
+.hero-img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  opacity: 0.8;
+}
+.hero-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-shadow: 2px 2px 6px rgba(0,0,0,0.7)
+}
+.cta-btn {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.6rem 1.2rem;
+  background: #ff9800;
+  color: #fff;
+  font-weight: bold;
+  border-radius: 6px;
+  text-decoration: none;
+}
+.cta-btn:hover {
+  background: #e68900;
+}
+
+/* Events */
+.events {
+  padding: 1.5rem;
+  background: #f9f9f9;
+}
+.events h2 {
+  color: #004d40;
+  margin-bottom: 0.8rem;
+}
+
+/* Weather */
+.weather {
+  padding: 1.5rem;
+  text-align: center;
+}
+.weather h2 {
+  color: #004d40;
+  margin-bottom: 0.5rem;
+}
+#forecast {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+#forecast div {
+  background: #f1f1f1;
+  padding: 0.8rem;
+  border-radius: 6px;
+}
+
+/* Spotlights */
+.spotlights {
+  padding: 1.5rem;
+}
+.spotlight-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1rem;
+}
+.spotlight-card {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 1rem;
+  text-align: center;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+}
+.spotlight-card img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  margin-bottom: 0.5rem;
 }

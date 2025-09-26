@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lucban Chamber of Commerce | Home</title>
+  <meta name="description" content="Welcome to the Lucban Chamber of Commerce. Explore business opportunities, events, and member spotlights." />
+  <meta name="author" content="Maria Carmela Gaela Enal" />
+  <meta name="theme-color" content="#004d40" />
+
+  <!-- Favicon -->
+  <link rel="icon" href="images/favicon.ico" type="image/x-icon" />
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="styles/normalize.css">
+  <link rel="stylesheet" href="styles/styles.css">
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <img src="images/logo.webp" alt="Lucban Chamber Logo" width="40" height="40" />
+      <p class="site-name">Lucban Chamber of Commerce</p>
+    </div>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="discover.html">Discover</a></li>
+        <li><a href="directory.html">Directory</a></li>
+        <li><a href="join.html">Join</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Hero Section -->
+    <section class="hero">
+      <img src="images/lucban-town.jpg" alt="Lucban Town View" class="hero-img">
+      <div class="hero-text">
+        <h1>Welcome to the Lucban Chamber of Commerce</h1>
+        <p>Connecting businesses, building community, and promoting growth.</p>
+        <a href="join.html" class="cta-btn">Join the Chamber</a>
+      </div>
+    </section>
+
+    <!-- Current Events -->
+    <section class="events">
+      <h2>Upcoming Events</h2>
+      <ul>
+        <li><strong>Pahiyas Festival 2025</strong> – May 15, 2025</li>
+        <li><strong>Business Networking Night</strong> – June 20, 2025</li>
+      </ul>
+    </section>
+
+    <!-- Weather Section -->
+    <section class="weather">
+      <h2>Local Weather</h2>
+      <p id="current-weather">Loading current weather...</p>
+      <div id="forecast"></div>
+    </section>
+
+    <!-- Spotlight Section -->
+    <section class="spotlights">
+      <h2>Member Spotlights</h2>
+      <div id="spotlight-container" class="spotlight-grid">
+        <!-- Random Silver/Gold members appear here -->
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; <span id="year"></span> Lucban Chamber of Commerce</p>
+    <p>Developed by Maria Carmela Gaela Enal | WDD 231</p>
+    <p>Last Modified: <span id="lastModified"></span></p>
+  </footer>
+
+  <script src="scripts/scripts.js" defer></script>
+</body>
+</html>
