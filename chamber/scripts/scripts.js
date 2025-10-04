@@ -12,18 +12,18 @@ async function getMembers() {
     displayMembers(data);
   } catch (error) {
     console.error("Error fetching members:", error);
+    if (directory) {
+      directory.innerHTML = "<p>Unable to load directory at this time.</p>";
+    }
   }
 }
 
 function displayMembers(members) {
   if (!directory) return;
-
   directory.innerHTML = "";
-
   members.forEach((member) => {
     const card = document.createElement("section");
     card.classList.add("member-card");
-
     card.innerHTML = `
       <img src="images/${member.image}" alt="${member.name} logo" width="100" height="100" loading="lazy">
       <div class="member-info">
@@ -34,7 +34,6 @@ function displayMembers(members) {
         <p class="level">Membership: ${getMembershipLevel(member.membership)}</p>
       </div>
     `;
-
     directory.appendChild(card);
   });
 }
@@ -57,7 +56,6 @@ if (gridBtn && listBtn && directory) {
     directory.classList.add("grid-view");
     directory.classList.remove("list-view");
   });
-
   listBtn.addEventListener("click", () => {
     directory.classList.add("list-view");
     directory.classList.remove("grid-view");
@@ -67,11 +65,11 @@ if (gridBtn && listBtn && directory) {
 // Call members
 if (directory) getMembers();
 
+
 // ========== WEATHER API ==========
 const weatherContainer = document.getElementById("current-weather");
 const forecastContainer = document.getElementById("forecast");
 
-// Replace with your OpenWeatherMap API key
 const apiKey = "a4da5fcf3901761ad0c870615285c9f6";
 const city = "Lucban";
 const units = "metric";
@@ -85,22 +83,29 @@ async function fetchWeather() {
     const current = data.list[0];
     const temp = Math.round(current.main.temp);
     const desc = current.weather[0].description;
-    weatherContainer.textContent = `Now: ${temp}°C, ${desc}`;
+    if (weatherContainer) {
+      weatherContainer.textContent = `Now: ${temp}°C, ${desc}`;
+    }
 
     // Forecast (next 3 days, one per day at noon)
-    forecastContainer.innerHTML = "";
-    for (let i = 8; i <= 24; i += 8) {
-      const day = data.list[i];
-      const date = new Date(day.dt_txt).toLocaleDateString("en-US", { weekday: "short" });
-      const ftemp = Math.round(day.main.temp);
-      forecastContainer.innerHTML += `<div><strong>${date}</strong><br>${ftemp}°C</div>`;
+    if (forecastContainer) {
+      forecastContainer.innerHTML = "";
+      for (let i = 8; i <= 24; i += 8) {
+        const day = data.list[i];
+        const date = new Date(day.dt_txt).toLocaleDateString("en-US", { weekday: "short" });
+        const ftemp = Math.round(day.main.temp);
+        forecastContainer.innerHTML += `<div><strong>${date}</strong><br>${ftemp}°C</div>`;
+      }
     }
   } catch (error) {
     console.error("Weather fetch error:", error);
-    weatherContainer.textContent = "Unable to load weather.";
+    if (weatherContainer) {
+      weatherContainer.textContent = "Unable to load weather.";
+    }
   }
 }
 fetchWeather();
+
 
 // ========== SPOTLIGHTS ==========
 const spotlightContainer = document.getElementById("spotlight-container");
@@ -118,22 +123,54 @@ async function loadSpotlights() {
     const selected = shuffled.slice(0, 3);
 
     // Display
-    spotlightContainer.innerHTML = "";
-    selected.forEach(member => {
-      const card = document.createElement("div");
-      card.classList.add("spotlight-card");
-      card.innerHTML = `
-        <img src="images/${member.image}" alt="${member.name}">
-        <h3>${member.name}</h3>
-        <p>${member.address}</p>
-        <p>${member.phone}</p>
-        <a href="${member.website}" target="_blank">Visit Website</a>
-        <p><em>${getMembershipLevel(member.membership)}</em></p>
-      `;
-      spotlightContainer.appendChild(card);
-    });
+    if (spotlightContainer) {
+      spotlightContainer.innerHTML = "";
+      selected.forEach(member => {
+        const card = document.createElement("div");
+        card.classList.add("spotlight-card");
+        card.innerHTML = `
+          <img src="images/${member.image}" alt="${member.name}">
+          <h3>${member.name}</h3>
+          <p>${member.address}</p>
+          <p>${member.phone}</p>
+          <a href="${member.website}" target="_blank">Visit Website</a>
+          <p><em>${getMembershipLevel(member.membership)}</em></p>
+        `;
+        spotlightContainer.appendChild(card);
+      });
+    }
   } catch (error) {
     console.error("Spotlights error:", error);
   }
 }
 if (spotlightContainer) loadSpotlights();
+
+
+// Auto-fill timestamp when join.html loads
+const tsField = document.getElementById("timestamp");
+if (tsField) {
+  tsField.value = new Date().toLocaleString();
+}
+
+// Membership Modals
+const modalLinks = document.querySelectorAll("[data-modal]");
+modalLinks.forEach(link => {
+  link.addEventListener("click", e => {
+    e.preventDefault();
+    const modalId = link.getAttribute("data-modal");
+    document.getElementById(modalId).style.display = "block";
+  });
+});
+
+const closeButtons = document.querySelectorAll(".modal .close");
+closeButtons.forEach(btn => {
+  btn.addEventListener("click", () => {
+    btn.closest(".modal").style.display = "none";
+  });
+});
+
+window.addEventListener("click", e => {
+  if (e.target.classList.contains("modal")) {
+    e.target.style.display = "none";
+  }
+});

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Thank You | Lucban Chamber of Commerce</title>
+  <meta name="description" content="Thank you for joining the Lucban Chamber of Commerce.">
+  <link rel="stylesheet" href="styles/normalize.css">
+  <link rel="stylesheet" href="styles/styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner container">
+      <h1>Lucban Chamber of Commerce</h1>
+      <nav class="main-nav">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="directory.html">Directory</a></li>
+          <li><a href="join.html">Join</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <h2>Thank You for Joining!</h2>
+    <p>We have received your application. Here are the details you submitted:</p>
+
+    <div class="thankyou-info">
+      <p><strong>First Name:</strong> <span id="out-fname"></span></p>
+      <p><strong>Last Name:</strong> <span id="out-lname"></span></p>
+      <p><strong>Email:</strong> <span id="out-email"></span></p>
+      <p><strong>Mobile:</strong> <span id="out-phone"></span></p>
+      <p><strong>Business Name:</strong> <span id="out-organization"></span></p>
+      <p><strong>Submitted At:</strong> <span id="out-timestamp"></span></p>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; <span id="year"></span> Lucban Chamber of Commerce</p>
+      <p id="lastModified"></p>
+    </div>
+  </footer>
+
+  <script src="scripts/scripts.js" defer></script>
+  <script>
+    // Populate thank you page from URL parameters using the names from the join form
+    const params = new URLSearchParams(window.location.search);
+    document.getElementById("out-fname").textContent = params.get("firstName") || "";
+    document.getElementById("out-lname").textContent = params.get("lastName") || "";
+    document.getElementById("out-email").textContent = params.get("email") || "";
+    document.getElementById("out-phone").textContent = params.get("phone") || "";
+    document.getElementById("out-organization").textContent = params.get("organization") || "";
+    document.getElementById("out-timestamp").textContent = params.get("timestamp") || "";
+  </script>
+</body>
+</html>

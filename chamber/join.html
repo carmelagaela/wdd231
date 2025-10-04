@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Join | Lucban Chamber of Commerce</title>
+  <meta name="description" content="Apply to join the Lucban Chamber of Commerce.">
+  <link rel="stylesheet" href="styles/normalize.css">
+  <link rel="stylesheet" href="styles/styles.css">
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <img src="images/logo.webp" alt="Lucban Chamber of Commerce logo">
+      <h1>Lucban Chamber of Commerce</h1>
+    </div>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="discover.html">Discover</a></li>
+        <li><a href="directory.html">Directory</a></li>
+        <li><a href="join.html" class="active">Join</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="join-page container">
+    <h2>Join the Chamber</h2>
+    <p>Fill out the form below to apply for membership in the Lucban Chamber of Commerce.</p>
+
+    <section class="form-container">
+      <!-- Membership Form -->
+      <form class="membership-form" method="get" action="thankyou.html">
+        <label>
+          First Name:
+          <input type="text" name="firstName" title="First Name" autocomplete="given-name" required>
+        </label>
+        <label>
+          Last Name:
+          <input type="text" name="lastName" title="Last Name" autocomplete="family-name" required>
+        </label>
+        <label>
+          Organization Title:
+          <input type="text" name="orgTitle" title="Organization Title" autocomplete="organization-title" pattern="[A-Za-z\s\-]{7,}">
+        </label>
+        <label>
+          Email:
+          <input type="email" name="email" title="Email" autocomplete="email" placeholder="example@email.com" required>
+        </label>
+        <label>
+          Mobile Phone:
+          <input type="tel" name="phone" title="Mobile Phone" autocomplete="tel" required>
+        </label>
+        <label>
+          Business / Organization Name:
+          <input type="text" name="organization" title="Organization" autocomplete="organization" required>
+        </label>
+        <label>
+          Membership Level:
+          <select name="membership" title="Membership Level" required>
+            <option value="">-- Select a Level --</option>
+            <option value="1">NP Membership</option>
+            <option value="2">Bronze Membership</option>
+            <option value="2">Silver Membership</option>
+            <option value="3">Gold Membership</option>
+          </select>
+        </label>
+        <label>
+          Business / Organization Description:
+          <textarea name="description" title="Business Description"></textarea>
+        </label>
+
+        <input type="hidden" name="timestamp" id="timestamp">
+        <button type="submit">Submit Application</button>
+      </form>
+
+      <!-- Membership Cards -->
+      <div class="membership-cards">
+        <div class="card">
+          <h3>NP Membership</h3>
+          <p>Non-profit organizations, no fee.</p>
+          <a href="#" data-modal="np">View Benefits</a>
+        </div>
+
+        <div class="card">
+          <h3>Bronze Membership</h3>
+          <p>Entry-level membership.</p>
+          <a href="#" data-modal="bronze">View Benefits</a>
+        </div>
+
+        <div class="card">
+          <h3>Silver Membership</h3>
+          <p>Added benefits and exposure.</p>
+          <a href="#" data-modal="silver">View Benefits</a>
+        </div>
+
+        <div class="card">
+          <h3>Gold Membership</h3>
+          <p>Maximum benefits and recognition.</p>
+          <a href="#" data-modal="gold">View Benefits</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Modals (IDs preserved but script will find them with suffix fallback) -->
+  <div class="modal" id="np-modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h3>NP Membership Benefits</h3>
+      <ul>
+        <li>No membership fee</li>
+        <li>Networking opportunities</li>
+        <li>Participation in community events</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="modal" id="bronze-modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h3>Bronze Membership Benefits</h3>
+      <ul>
+        <li>All NP benefits</li>
+        <li>Event invitations</li>
+        <li>Basic business directory listing</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="modal" id="silver-modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h3>Silver Membership Benefits</h3>
+      <ul>
+        <li>All Bronze benefits</li>
+        <li>Spotlight advertising on homepage</li>
+        <li>Discounted event tickets</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="modal" id="gold-modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h3>Gold Membership Benefits</h3>
+      <ul>
+        <li>All Silver benefits</li>
+        <li>Premium directory listing</li>
+        <li>Free training & workshops</li>
+      </ul>
+    </div>
+  </div>
+
+  <footer>
+    <p>&copy; <span id="year"></span> Lucban Chamber of Commerce</p>
+    <p>Developed by Maria Carmela Gaela Enal | WDD 231</p>
+    <p>Last Modified: <span id="lastModified"></span></p>
+  </footer>
+
+  <script src="scripts/scripts.js" defer></script>
+</body>
+</html>
