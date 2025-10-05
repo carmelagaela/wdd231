@@ -1,0 +1,301 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>PharmaCare — W05 Site Plan</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Rubik:wght@500;700&display=swap" rel="stylesheet">
+
+  <style>
+    /* --- Color schema (use these colors exclusively on this document) --- */
+    :root{
+      --primary: #0B6E6E;   /* Primary teal - headings, primary buttons */
+      --secondary: #0A5275; /* Secondary deep blue - accents, links */
+      --neutral: #053237;   /* Neutral dark - body text */
+      --bg: #E6F7F7;        /* Background soft */
+      --card: rgba(11,110,110,0.06); /* subtle card background */
+      --radius: 12px;
+      --max-width: 980px;
+      --gap: 1rem;
+    }
+
+    /* Typography */
+    html,body{height:100%;}
+    body{
+      margin:0;
+      font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+      color:var(--neutral);
+      background:var(--bg);
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      line-height:1.45;
+      padding:3rem 1rem;
+      display:flex;
+      justify-content:center;
+    }
+
+    .container{
+      width:100%;
+      max-width:var(--max-width);
+      background: white;
+      border-radius:var(--radius);
+      box-shadow:0 8px 24px rgba(5,50,55,0.08);
+      padding:2rem;
+      box-sizing:border-box;
+    }
+
+    header h1{
+      font-family: 'Rubik', 'Inter', sans-serif;
+      font-size:1.6rem;
+      margin:0 0 .25rem 0;
+      color:var(--primary);
+    }
+    header p.tagline{
+      margin:0 0 1rem 0;
+      font-weight:600;
+      color:var(--secondary);
+    }
+
+    h2{
+      font-family: 'Rubik', sans-serif;
+      color:var(--primary);
+      margin-top:1.6rem;
+      margin-bottom:.5rem;
+      font-size:1.05rem;
+    }
+
+    p, li{color:var(--neutral);}
+    ul{margin:0 0 1rem 1.2rem;padding:0}
+
+    .swatches{display:flex;gap:var(--gap);flex-wrap:wrap;margin-top:.5rem}
+    .swatch{width:140px;padding:.75rem;border-radius:8px;box-shadow:inset 0 -6px 14px rgba(0,0,0,0.02);}
+    .swatch .name{font-weight:600;margin-bottom:.25rem}
+    .swatch .hex{font-family:monospace;font-size:.9rem}
+
+    .wireframes{display:grid;grid-template-columns:1fr 1fr;gap:1rem;align-items:start}
+    .wireframe-box{background:var(--card);border-radius:8px;padding:.75rem}
+    .wireframe svg{width:100%;height:auto;border-radius:6px}
+
+    .specs{display:grid;grid-template-columns:1fr;gap:.8rem}
+
+    footer{margin-top:1.6rem;padding-top:1rem;border-top:1px solid rgba(5,50,55,0.06);font-size:.95rem}
+
+    /* Responsive adjustments */
+    @media (max-width:720px){
+      .wireframes{grid-template-columns:1fr}
+      body{padding:1.25rem}
+      header h1{font-size:1.25rem}
+    }
+
+    /* small helpers for labels used in wireframes */
+    .muted{opacity:.8;font-size:.95rem}
+    code{background:transparent;border-radius:4px;padding:.15rem .4rem;font-family:monospace;color:var(--secondary)}
+
+  </style>
+</head>
+<body>
+  <div class="container" role="main">
+    <header>
+      <h1>PharmaCare</h1>
+      <p class="tagline">A guide to safe and smart medication use — site plan for W05</p>
+    </header>
+
+    <section id="site-name">
+      <h2>Site Name</h2>
+      <p><strong>PharmaCare</strong> — chosen because it clearly combines "Pharma" (pharmacy/pharmacology) with "Care" (safety, patient-centered health). The name is short, brandable, and easily searchable.</p>
+      <p class="muted">Optional domain suggestion: <code>pharmacare.ph</code> or <code>pharmacare-guide.org</code> (domain availability not required for the course).</p>
+    </section>
+
+    <section id="site-purpose">
+      <h2>Site Purpose</h2>
+      <p>The site aims to educate the public about safe medication practices and the role of pharmacists in healthcare. It is a compact resource hub for:</p>
+      <ul>
+        <li>Clear medication summaries (uses, dosage, side effects, warnings) for common OTC and prescription drugs.</li>
+        <li>An interactive "Ask a Pharmacist" / medication log feature so users can track what they take and submit questions.</li>
+        <li>Practical tips for storage, disposal, and identifying interactions.</li>
+      </ul>
+    </section>
+
+    <section id="planned-pages">
+      <h2>Planned Pages (site map)</h2>
+      <ul>
+        <li><strong>Home (index.html)</strong> — mission, featured tips, quick search to medication index.</li>
+        <li><strong>Medication Info Center</strong> — dynamic cards of 15+ medications loaded from <code>medications.json</code> (or API).</li>
+        <li><strong>Ask a Pharmacist / Medication Log</strong> — form to submit questions and log medication entries (stored in <code>localStorage</code>).</li>
+        <li><strong>About &amp; Resources</strong> — accessibility statement, sources, disclaimers, and pharmacist contact form.</li>
+      </ul>
+    </section>
+
+    <section id="functional-requirements">
+      <h2>JavaScript &amp; Functional Requirements</h2>
+      <ul>
+        <li>Use <code>fetch()</code> to retrieve medication data from a local JSON file with <code>try...catch</code> for error handling.</li>
+        <li>Render medication cards dynamically (template literals + <code>map()</code>).</li>
+        <li>Filter/search medications by name or category using <code>filter()</code>.</li>
+        <li>Form interactions: validate inputs, save medication logs to <code>localStorage</code>, and show confirmation on a result page.</li>
+        <li>Modal dialog for safety tips (accessible: focus trapping + ARIA attributes).</li>
+        <li>ES Modules: split code into <code>fetchData.js</code>, <code>renderCards.js</code>, <code>formHandler.js</code>, <code>modal.js</code>.</li>
+      </ul>
+    </section>
+
+    <section id="data-sources">
+      <h2>Data Sources</h2>
+      <ul>
+        <li><strong>Local</strong>: <code>medications.json</code> with at least 15 entries (fields: <code>name</code>, <code>uses</code>, <code>dosage</code>, <code>sideEffects</code>, <code>warnings</code>, <code>category</code>).</li>
+        <li><strong>Optional External APIs</strong>: OpenFDA or DrugBank — use only if allowed and if an API key is available. For the class deliverable, the local JSON file is sufficient.</li>
+      </ul>
+    </section>
+
+    <section id="scenarios">
+      <h2>Scenarios (target audience questions)</h2>
+      <ol>
+        <li><strong>"I take multiple medications — how do I check for interactions?"</strong>
+          <p class="muted">This drives content for interaction warnings, a medication log tool, and a clear explanation of when to consult a pharmacist.</p>
+        </li>
+        <li><strong>"What are the common side effects of this OTC pain reliever and how should I store it at home?"</strong>
+          <p class="muted">This requires clear card content (side effects, storage, and disposal tips) and a modal for quick safety reminders.</p>
+        </li>
+        <li><strong>"How can I contact a pharmacist or submit a question anonymously?"</strong>
+          <p class="muted">Design the Ask a Pharmacist form to accept questions and optionally provide contact preferences.</p>
+        </li>
+      </ol>
+    </section>
+
+    <section id="color-schema">
+      <h2>Color Schema (used on this document)</h2>
+      <p>These colors are selected for a clean, clinical, and trustworthy visual language. They are used consistently across the site plan document.</p>
+
+      <div class="swatches">
+        <div class="swatch" style="background:linear-gradient(180deg,var(--card),transparent);border:1px solid rgba(10,82,117,0.06)">
+          <div class="name">Primary — Teal</div>
+          <div class="hex">#0B6E6E</div>
+          <div class="muted">Usage: Main headings, primary buttons, emphasis.</div>
+        </div>
+
+        <div class="swatch" style="background:linear-gradient(180deg,rgba(10,82,117,0.06),transparent);border:1px solid rgba(10,82,117,0.06)">
+          <div class="name">Secondary — Deep Blue</div>
+          <div class="hex">#0A5275</div>
+          <div class="muted">Usage: Links, accents, icons.</div>
+        </div>
+
+        <div class="swatch" style="background:linear-gradient(180deg,rgba(5,50,55,0.06),transparent);border:1px solid rgba(5,50,55,0.06)">
+          <div class="name">Neutral — Dark</div>
+          <div class="hex">#053237</div>
+          <div class="muted">Usage: Body copy and subtle UI borders.</div>
+        </div>
+
+        <div class="swatch" style="background:var(--bg);border:1px dashed rgba(11,110,110,0.06)">
+          <div class="name">Background — Soft</div>
+          <div class="hex">#E6F7F7</div>
+          <div class="muted">Usage: Page background and large-area fills.</div>
+        </div>
+      </div>
+
+      <p class="muted" style="margin-top:.6rem">(All color uses on the final site will follow WCAG contrast checks; the palette above is tuned for clarity and a calm, clinical tone.)</p>
+    </section>
+
+    <section id="typography">
+      <h2>Typography</h2>
+      <p>Selected web fonts (applied on this document):</p>
+      <ul>
+        <li><strong>Rubik</strong> — headings and UI labels (used for clear, friendly headings).</li>
+        <li><strong>Inter</strong> — body copy, small labels, and UI text (readable at small sizes).</li>
+      </ul>
+      <p class="muted">Usage examples on site: <code>h1, h2, nav labels</code> = Rubik; <code>body, p, form labels</code> = Inter.</p>
+    </section>
+
+    <section id="wireframe">
+      <h2>Wireframe — Home Page (mobile &amp; desktop)</h2>
+      <p>Simple wireframes to communicate layout relationships. These are non-final sketches and will be refined during development.</p>
+
+      <div class="wireframes">
+        <figure class="wireframe-box">
+          <figcaption><strong>Mobile (360 × viewport)</strong></figcaption>
+          <!-- Mobile wireframe (SVG) -->
+          <svg viewBox="0 0 360 640" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="mobile wireframe">
+            <rect x="8" y="8" width="344" height="60" rx="8" fill="#ffffff" stroke="var(--primary)" stroke-width="2"/>
+            <text x="26" y="38" font-family="Rubik, Inter, sans-serif" font-size="10" fill="var(--primary)">Header: Logo + Nav</text>
+
+            <rect x="16" y="80" width="328" height="96" rx="8" fill="#ffffff" stroke="var(--secondary)" stroke-width="1"/>
+            <text x="28" y="120" font-family="Inter, sans-serif" font-size="9" fill="var(--secondary)">Hero: Mission + Search</text>
+
+            <rect x="16" y="190" width="150" height="72" rx="8" fill="#ffffff" stroke="rgba(5,50,55,0.06)"/>
+            <rect x="194" y="190" width="150" height="72" rx="8" fill="#ffffff" stroke="rgba(5,50,55,0.06)"/>
+            <text x="28" y="222" font-size="9" fill="var(--neutral)">Medication cards (grid)</text>
+
+            <rect x="16" y="280" width="328" height="100" rx="6" fill="#ffffff" stroke="rgba(5,50,55,0.04)"/>
+            <text x="28" y="320" font-size="9" fill="var(--neutral)">Ask a Pharmacist preview + CTA</text>
+
+            <rect x="16" y="390" width="328" height="120" rx="6" fill="#ffffff" stroke="rgba(5,50,55,0.04)"/>
+            <text x="28" y="420" font-size="9" fill="var(--neutral)">Footer: links, accessibility, disclaimers</text>
+          </svg>
+        </figure>
+
+        <figure class="wireframe-box">
+          <figcaption><strong>Desktop (wide)</strong></figcaption>
+          <!-- Desktop wireframe (SVG) -->
+          <svg viewBox="0 0 900 600" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="desktop wireframe">
+            <rect x="16" y="16" width="868" height="80" rx="8" fill="#ffffff" stroke="var(--primary)" stroke-width="2"/>
+            <text x="34" y="50" font-family="Rubik, Inter, sans-serif" font-size="12" fill="var(--primary)">Header: Logo + top nav + search</text>
+
+            <rect x="16" y="110" width="560" height="160" rx="8" fill="#ffffff" stroke="var(--secondary)" stroke-width="1"/>
+            <text x="34" y="170" font-family="Inter, sans-serif" font-size="11" fill="var(--secondary)">Hero &amp; Featured Tips</text>
+
+            <rect x="592" y="110" width="292" height="160" rx="8" fill="#ffffff" stroke="rgba(5,50,55,0.06)"/>
+            <text x="604" y="170" font-size="11" fill="var(--neutral)">Quick Log / Ask a Pharmacist</text>
+
+            <rect x="16" y="290" width="868" height="220" rx="8" fill="#ffffff" stroke="rgba(5,50,55,0.04)"/>
+            <text x="34" y="350" font-size="11" fill="var(--neutral)">Medication Index (card grid with filters)</text>
+
+            <rect x="16" y="526" width="868" height="56" rx="6" fill="#ffffff" stroke="rgba(5,50,55,0.04)"/>
+            <text x="34" y="564" font-size="10" fill="var(--neutral)">Footer</text>
+          </svg>
+        </figure>
+      </div>
+    </section>
+
+    <section id="css-note">
+      <h2>CSS</h2>
+      <p>Supporting CSS files:</p>
+      <ul>
+        <li><code>styles.css</code> — global layout and responsive rules (use the color variables above).</li>
+        <li><code>components.css</code> — card styles, form styles, modal, utility classes.</li>
+        <li>Use CSS custom properties (variables) to keep the color schema consistent and easy to change globally.</li>
+      </ul>
+    </section>
+
+    <section id="testing">
+      <h2>Testing &amp; Self-check</h2>
+      <p>Planned manual and automated checks prior to submission:</p>
+      <ul>
+        <li><strong>HTML validation:</strong> Run W3C Markup Validator on <code>index.html</code>.</li>
+        <li><strong>Accessibility:</strong> Use Lighthouse accessibility audit, WAVE, and axe (browser extension). Ensure keyboard navigation and ARIA roles for modal dialogs.</li>
+        <li><strong>Color contrast:</strong> Check WCAG contrast for body text and interactive elements (aim for AA for normal text, AAA where possible).</li>
+        <li><strong>SEO &amp; best practices:</strong> Add meaningful <code>title</code>, <code>meta description</code>, semantic headings, and descriptive <code>alt</code> attributes for images.</li>
+        <li><strong>Performance:</strong> Use Lighthouse; keep JS modular and defer non-critical scripts. Optimize images (WebP where possible) and use <code>srcset</code> for responsive images.</li>
+        <li><strong>Form validation:</strong> Client-side validation + clear error messages; test localStorage persistence in multiple browsers.</li>
+      </ul>
+    </section>
+
+    <section id="deliverables">
+      <h2>Deliverables &amp; Next Steps</h2>
+      <ul>
+        <li>Final HTML files: <code>index.html</code>, <code>medications.html</code> (or combined Index + Info Center).</li>
+        <li>CSS: <code>styles.css</code>, <code>components.css</code>.</li>
+        <li>JS (modules): <code>fetchData.js</code>, <code>renderCards.js</code>, <code>formHandler.js</code>, <code>modal.js</code>.</li>
+        <li>Data: <code>medications.json</code> — 15+ medication objects.</li>
+        <li>README.md with project description, how to run, and testing notes.</li>
+      </ul>
+      <p class="muted">Next immediate step I recommend: create the <code>medications.json</code> seed file and a starter <code>index.html</code> with the dynamic card container so we can test the fetch/render flow.</p>
+    </section>
+
+    <footer>
+      <p><strong>Author:</strong> Project plan for <em>PharmaCare</em> — W05 submission. Use this document as the blueprint during implementation; it is a living document and may be updated as development continues.</p>
+    </footer>
+  </div>
+</body>
+</html>
