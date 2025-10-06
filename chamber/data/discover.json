@@ -1,0 +1,58 @@
+[
+  {
+    "id": "a",
+    "title": "Pahiyas Festival",
+    "image": "pahiyas.webp",
+    "address": "Poblacion, Lucban, Quezon",
+    "description": "Lucban's colorful annual festival celebrated every May to honor San Isidro Labrador. Famous for decorative kiping and strong local traditions."
+  },
+  {
+    "id": "b",
+    "title": "Kamay ni Hesus Shrine",
+    "image": "kamay.webp",
+    "address": "Tayabas-Lucban Rd, Lucban, Quezon",
+    "description": "A popular pilgrimage site featuring a large healing church and hilltop stations of the cross with panoramic views."
+  },
+  {
+    "id": "c",
+    "title": "Lucban Longganisa Market",
+    "image": "long.webp",
+    "address": "Quezon Ave, Lucban, Quezon",
+    "description": "Local specialty longganisa (sausage) market offering authentic flavors and recipes passed down through generations."
+  },
+  {
+    "id": "d",
+    "title": "Lucban Town Plaza",
+    "image": "plaza.webp",
+    "address": "Rizal St, Lucban, Quezon",
+    "description": "The central plaza where community events happen, ideal for meeting locals and learning about town life."
+  },
+  {
+    "id": "e",
+    "title": "Samkará Resort",
+    "image": "samkara.webp",
+    "address": "Majayjay-Lucban Rd, Brgy. Igang",
+    "description": "A resort offering mountain views and relaxing accommodations—good for visitors seeking nature and comfort."
+  },
+  {
+    "id": "f",
+    "title": "Local Artisans Hub",
+    "image": "artisan.webp",
+    "address": "Fidel Rada St, Lucban, Quezon",
+    "description": "Small shops and makers selling woven crafts, woodwork, and local delicacies — great for souvenirs."
+  },
+  {
+    "id": "g",
+    "title": "Bahay na Bato Heritage Walk",
+    "image": "heritage.webp",
+    "address": "Heritage District, Lucban",
+    "description": "A short walking route showcasing historic houses and traditional architecture in the town center."
+  },
+  {
+    "id": "h",
+    "title": "Buddy's Restaurant",
+    "image": "restaurant.webp",
+    "address": "Rizal Ave, Lucban, Quezon",
+    "description": "A well-known restaurant serving local specialties and a welcoming environment for visitors."
+  }
+]

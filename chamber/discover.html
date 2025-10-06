@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lucban Chamber of Commerce | Discover</title>
+  <meta name="description" content="Discover Lucban — attractions, landmarks, and businesses that make Lucban special." />
+  <meta name="author" content="Maria Carmela Gaela Enal" />
+  <meta name="theme-color" content="#004d40" />
+
+  <link rel="icon" href="images/favicon.ico" type="image/x-icon" />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <!-- existing CSS -->
+  <link rel="stylesheet" href="styles/normalize.css">
+  <link rel="stylesheet" href="styles/styles.css">
+
+  <!-- discover-specific CSS -->
+  <link rel="stylesheet" href="styles/discover.css">
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <img src="images/logo.webp" alt="Lucban Chamber Logo" width="40" height="40" />
+      <p class="site-name">Lucban Chamber of Commerce</p>
+    </div>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="discover.html" class="active">Discover</a></li>
+        <li><a href="directory.html">Directory</a></li>
+        <li><a href="join.html">Join</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section class="discover-intro">
+      <h1>Discover Lucban</h1>
+      <p class="text-muted">A small town with big culture — local attractions, flavors, and experiences for visitors and prospective members.</p>
+
+      <!-- Last visit message area (can be closed) -->
+      <div id="visit-message" class="visit-message" role="status" aria-live="polite">
+        <span id="visit-text"></span>
+        <button id="visit-close" class="visit-close" aria-label="Close visit message">&times;</button>
+      </div>
+    </section>
+
+    <section class="discover-grid" id="discover-grid" aria-live="polite">
+      <!-- Cards loaded by scripts/discover.js -->
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; <span id="year"></span> Lucban Chamber of Commerce</p>
+    <p>Developed by Maria Carmela Gaela Enal | WDD 231</p>
+    <p>Last Modified: <span id="lastModified"></span></p>
+  </footer>
+
+  <!-- existing shared scripts -->
+  <script src="scripts/scripts.js" defer></script>
+
+  <!-- discover script -->
+  <script src="scripts/discover.js" defer></script>
+</body>
+</html>
