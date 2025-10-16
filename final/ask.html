@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>PharmaCare — Ask a Pharmacist</title>
+
+  <meta name="description" content="Submit a question to a pharmacist or maintain a local medication log." />
+  <meta name="author" content="Maria Carmela Gaela" />
+  <link rel="icon" href="assets/images/favicon.ico" />
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Rubik:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles/styles.css">
+  <link rel="stylesheet" href="styles/components.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html">
+        <img src="assets/images/logo.webp" alt="PharmaCare logo" class="logo" />
+        <span class="brand-title">PharmaCare</span>
+      </a>
+
+      <button id="nav-toggle" class="nav-toggle" aria-controls="primary-nav" aria-expanded="false" aria-label="Open navigation">
+        ☰
+      </button>
+
+      <nav id="primary-nav" class="primary-nav" aria-label="Primary">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="medications.html">Medication Info</a></li>
+          <li><a class="active" href="ask.html">Ask a Pharmacist</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <h1>Ask a Pharmacist / Medication Log</h1>
+    <p class="lead">Submit a question (optionally anonymous) or log your medication entry. Submissions are saved to localStorage in your browser.</p>
+
+    <form id="ask-form" action="ask-confirm.html" method="GET" novalidate>
+      <div class="form-grid">
+        <label>
+          Name (optional)
+          <input type="text" name="name" id="name" placeholder="Your name (optional)" />
+        </label>
+
+        <label>
+          Email (optional)
+          <input type="email" name="email" id="email" placeholder="you@example.com" />
+        </label>
+
+        <label>
+          Medication name <span class="required">*</span>
+          <input type="text" name="medication" id="medication" required placeholder="e.g., Ibuprofen" />
+        </label>
+
+        <label>
+          Dosage (optional)
+          <input type="text" name="dosage" id="dosage" placeholder="e.g., 400 mg" />
+        </label>
+
+        <label class="full">
+          Question or message <span class="required">*</span>
+          <textarea name="message" id="message" required rows="6" placeholder="Describe your question or note..."></textarea>
+        </label>
+      </div>
+
+      <div class="form-actions">
+        <button type="submit" class="btn">Submit</button>
+        <button type="reset" class="btn outline">Reset</button>
+      </div>
+      <p id="form-feedback" class="muted" aria-live="polite"></p>
+    </form>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© <span id="year"></span> PharmaCare | Author: Maria Carmela Gaela | <a href="attribution.html">Attributions</a> | <a id="demo-link-3" href="https://drive.google.com/file/d/1G6hpHBa7-Oy1Z0qaGEgYORGRfazit1f1/view?usp=sharing" target="_blank" rel="noopener">Project Demo</a></p>
+    </div>
+  </footer>
+
+  <script type="module" src="scripts/formHandler.js"></script>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    const navToggle = document.getElementById('nav-toggle');
+    const primaryNav = document.getElementById('primary-nav');
+    navToggle.addEventListener('click', () => {
+      const expanded = navToggle.getAttribute('aria-expanded') === 'true';
+      navToggle.setAttribute('aria-expanded', String(!expanded));
+      primaryNav.classList.toggle('open');
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>PharmaCare — Submission Received</title>
+  <meta name="author" content="Maria Carmela Gaela" />
+  <link rel="icon" href="assets/images/favicon.ico" />
+  <link rel="stylesheet" href="styles/styles.css">
+  <link rel="stylesheet" href="styles/components.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html">
+        <img src="assets/images/logo.webp" alt="PharmaCare logo" class="logo" />
+        <span class="brand-title">PharmaCare</span>
+      </a>
+    </div>
+  </header>
+
+  <main class="container">
+    <h1>Submission Received</h1>
+    <p>Thank you. Your question or medication log entry has been saved locally in your browser. You can return to the <a href="ask.html">Ask a Pharmacist</a> page or browse <a href="medications.html">Medication Info</a>.</p>
+    <section>
+      <h2>Your recent submissions (saved in browser)</h2>
+      <div id="submissions-list" class="cards-grid"></div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© <span id="year"></span> PharmaCare | Author: Maria Carmela Gaela</p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    const stored = JSON.parse(localStorage.getItem('pharmacare_submissions') || '[]');
+    const list = document.getElementById('submissions-list');
+    if (stored.length === 0) {
+      list.innerHTML = '<p class="muted">No submissions saved locally yet.</p>';
+    } else {
+      list.innerHTML = stored.map(s => `
+        <article class="card">
+          <h3>${s.medication}</h3>
+          <p><strong>Name:</strong> ${s.name || 'Anonymous'}</p>
+          <p><strong>Message:</strong> ${s.message}</p>
+          <p class="muted">Saved: ${new Date(s.savedAt).toLocaleString()}</p>
+        </article>
+      `).join('');
+    }
+  </script>
+</body>
+</html>

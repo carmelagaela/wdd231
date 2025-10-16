@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>PharmaCare — Medication Info</title>
+
+  <meta name="description" content="Medication index with summaries, dosage, side effects, and warnings. Dynamic cards loaded from a local JSON file." />
+  <meta name="author" content="Maria Carmela Gaela" />
+  <meta property="og:title" content="PharmaCare — Medication Info" />
+  <meta property="og:description" content="Browse medication summaries and safety information." />
+  <meta property="og:image" content="assets/images/hero-pharma.webp" />
+  <link rel="icon" href="assets/images/favicon.ico" />
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Rubik:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles/styles.css">
+  <link rel="stylesheet" href="styles/components.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html">
+        <img src="assets/images/logo.webp" alt="PharmaCare logo" class="logo" />
+        <span class="brand-title">PharmaCare</span>
+      </a>
+
+      <button id="nav-toggle" class="nav-toggle" aria-controls="primary-nav" aria-expanded="false" aria-label="Open navigation">
+        ☰
+      </button>
+
+      <nav id="primary-nav" class="primary-nav" aria-label="Primary">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a class="active" href="medications.html">Medication Info</a></li>
+          <li><a href="ask.html">Ask a Pharmacist</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section>
+      <h1>Medication Index</h1>
+      <p class="lead">Browse medications, view dosage, common side effects, and warnings. Click a card to view more details.</p>
+
+      <div class="controls">
+        <input id="search" type="search" placeholder="Search medication name or category..." aria-label="Search medications">
+        <select id="category-select" aria-label="Filter by category">
+          <option value="">All categories</option>
+        </select>
+      </div>
+
+      <div id="cards-container" class="cards-grid" aria-live="polite"></div>
+    </section>
+  </main>
+
+  <!-- Accessible modal markup appended to body by modal module -->
+  <div id="modal-root"></div>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© <span id="year"></span> PharmaCare | Author: Maria Carmela Gaela | <a href="attribution.html">Attributions</a> | <a id="demo-link-2" href="https://drive.google.com/file/d/1G6hpHBa7-Oy1Z0qaGEgYORGRfazit1f1/view?usp=sharing" target="_blank" rel="noopener">Project Demo</a></p>
+      <p class="muted">Hosted on GitHub: <a href="https://carmelagaela.github.io/finalproject" target="_blank" rel="noopener">carmelagaela.github.io/finalproject</a></p>
+    </div>
+  </footer>
+
+  <script type="module" src="scripts/medications-page.js"></script>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    const navToggle = document.getElementById('nav-toggle');
+    const primaryNav = document.getElementById('primary-nav');
+    navToggle.addEventListener('click', () => {
+      const expanded = navToggle.getAttribute('aria-expanded') === 'true';
+      navToggle.setAttribute('aria-expanded', String(!expanded));
+      primaryNav.classList.toggle('open');
+    });
+  </script>
+</body>
+</html>

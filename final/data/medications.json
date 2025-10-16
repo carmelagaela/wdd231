@@ -1,0 +1,152 @@
+[
+  {
+    "id": 1,
+    "name": "Acetaminophen",
+    "uses": "Pain relief and fever reduction",
+    "dosage": "500 mg every 4–6 hours as needed (do not exceed 3,000 mg/day without medical advice)",
+    "sideEffects": "Rare allergic reaction; nausea",
+    "warnings": "Avoid overdose; may harm the liver. Alcohol increases risk.",
+    "category": "Pain reliever",
+    "image": "assets/images/acetaminophen.webp"
+  },
+  {
+    "id": 2,
+    "name": "Ibuprofen",
+    "uses": "Anti-inflammatory and pain relief",
+    "dosage": "200–400 mg every 4–6 hours as needed",
+    "sideEffects": "Stomach upset, dizziness",
+    "warnings": "Take with food to reduce stomach irritation. Avoid if history of ulcers.",
+    "category": "NSAID",
+    "image": "assets/images/ibuprofen.webp"
+  },
+  {
+    "id": 3,
+    "name": "Aspirin",
+    "uses": "Pain relief and heart protection (low-dose)",
+    "dosage": "81–325 mg for cardioprotection as advised",
+    "sideEffects": "Stomach upset, bleeding",
+    "warnings": "Not for children with viral illness (Reye's syndrome).",
+    "category": "NSAID",
+    "image": "assets/images/aspirin.webp"
+  },
+  {
+    "id": 4,
+    "name": "Amoxicillin",
+    "uses": "Bacterial infection treatment",
+    "dosage": "As prescribed (commonly 500 mg three times daily)",
+    "sideEffects": "Diarrhea, stomach upset",
+    "warnings": "Complete full course. Notify if allergic to penicillin.",
+    "category": "Antibiotic",
+    "image": "assets/images/amoxicillin.webp"
+  },
+  {
+    "id": 5,
+    "name": "Loratadine",
+    "uses": "Allergy relief (non-drowsy)",
+    "dosage": "10 mg once daily",
+    "sideEffects": "Headache in some people",
+    "warnings": "Follow recommended dosing for children",
+    "category": "Antihistamine",
+    "image": "assets/images/loratadine.webp"
+  },
+  {
+    "id": 6,
+    "name": "Cetirizine",
+    "uses": "Allergy relief",
+    "dosage": "10 mg once daily",
+    "sideEffects": "May cause drowsiness in some",
+    "warnings": "Avoid driving if drowsy",
+    "category": "Antihistamine",
+    "image": "assets/images/cetirizine.webp"
+  },
+  {
+    "id": 7,
+    "name": "Diphenhydramine",
+    "uses": "Allergy and short-term insomnia",
+    "dosage": "25–50 mg at night for sleep; follow package for allergies",
+    "sideEffects": "Drowsiness, dry mouth",
+    "warnings": "Do not combine with alcohol or other sedatives",
+    "category": "Antihistamine",
+    "image": "assets/images/diphenhydramine.webp"
+  },
+  {
+    "id": 8,
+    "name": "Albuterol",
+    "uses": "Short-acting bronchodilator for asthma",
+    "dosage": "As inhaler label directs (e.g., 2 puffs every 4–6 hours)",
+    "sideEffects": "Tremor, palpitations",
+    "warnings": "Use rescue inhaler only as directed",
+    "category": "Respiratory",
+    "image": "assets/images/albuterol.webp"
+  },
+  {
+    "id": 9,
+    "name": "Metformin",
+    "uses": "Blood sugar control for type 2 diabetes",
+    "dosage": "Typically 500–1000 mg twice daily as prescribed",
+    "sideEffects": "Gastrointestinal upset",
+    "warnings": "Monitor kidney function; avoid excessive alcohol",
+    "category": "Antidiabetic",
+    "image": "assets/images/metformin.webp"
+  },
+  {
+    "id": 10,
+    "name": "Omeprazole",
+    "uses": "Acid reflux and ulcer treatment",
+    "dosage": "20–40 mg once daily",
+    "sideEffects": "Headache, nausea",
+    "warnings": "Long-term use may affect nutrient absorption",
+    "category": "Gastrointestinal",
+    "image": "assets/images/omeprazole.webp"
+  },
+  {
+    "id": 11,
+    "name": "Simvastatin",
+    "uses": "Lower cholesterol",
+    "dosage": "As prescribed, commonly 10–40 mg nightly",
+    "sideEffects": "Muscle pain, headache",
+    "warnings": "Monitor for muscle pain and interactions with grapefruit",
+    "category": "Cardiovascular",
+    "image": "assets/images/simvastatin.webp"
+  },
+  {
+    "id": 12,
+    "name": "Prednisone",
+    "uses": "Inflammation control for many conditions",
+    "dosage": "Variable; follow prescriber's instructions",
+    "sideEffects": "Weight gain, mood changes",
+    "warnings": "Do not stop abruptly after long-term use",
+    "category": "Steroid",
+    "image": "assets/images/prednisone.webp"
+  },
+  {
+    "id": 13,
+    "name": "Loperamide",
+    "uses": "Control diarrhea",
+    "dosage": "Follow package instructions (commonly 4 mg initial, then 2 mg after each loose stool)",
+    "sideEffects": "Constipation, dizziness",
+    "warnings": "Not for bloody diarrhea or high fever",
+    "category": "Gastrointestinal",
+    "image": "assets/images/loperamide.webp"
+  },
+  {
+    "id": 14,
+    "name": "Fluoxetine",
+    "uses": "Antidepressant (SSRI)",
+    "dosage": "As prescribed; commonly 20 mg once daily",
+    "sideEffects": "Nausea, sleep disturbance",
+    "warnings": "Watch for mood changes; interacts with other serotonergic drugs",
+    "category": "Psychiatric",
+    "image": "assets/images/fluoxetine.webp"
+  },
+  {
+    "id": 15,
+    "name": "Nitroglycerin",
+    "uses": "Angina (chest pain) management",
+    "dosage": "Follow prescriber's instructions; sublingual for acute chest pain",
+    "sideEffects": "Headache, low blood pressure",
+    "warnings": "Do not use with PDE5 inhibitors (e.g., sildenafil)",
+    "category": "Cardiovascular",
+    "image": "assets/images/nitroglycerin.webp"
+  }
+]

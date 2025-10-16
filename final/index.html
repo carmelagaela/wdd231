@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>PharmaCare — Safe & Smart Medication Use</title>
+
+  <meta name="description" content="PharmaCare: a concise guide to safe medication practices, medication summaries, and an Ask a Pharmacist feature." />
+  <meta name="author" content="Maria Carmela Gaela" />
+  <meta property="og:title" content="PharmaCare — Safe & Smart Medication Use" />
+  <meta property="og:description" content="Learn about medications, watch safety tips, and ask a pharmacist." />
+  <meta property="og:image" content="assets/images/hero-pharma.webp" />
+  <meta property="og:type" content="website" />
+
+  <link rel="icon" href="assets/images/favicon.ico" />
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Rubik:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles/styles.css">
+  <link rel="stylesheet" href="styles/components.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html">
+        <img src="assets/images/logo.webp" alt="PharmaCare logo" class="logo" />
+        <span class="brand-title">PharmaCare</span>
+      </a>
+
+      <button id="nav-toggle" class="nav-toggle" aria-controls="primary-nav" aria-expanded="false" aria-label="Open navigation">
+        ☰
+      </button>
+
+      <nav id="primary-nav" class="primary-nav" aria-label="Primary">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="medications.html">Medication Info</a></li>
+          <li><a href="ask.html">Ask a Pharmacist</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container main-content" id="main">
+    <section class="hero">
+      <div class="hero-left">
+        <h1>PharmaCare — Safe & Smart Medication Use</h1>
+        <p class="lead">A compact resource for medication summaries, storage & disposal tips, interaction warnings, and a place to ask a pharmacist.</p>
+        <p>
+          <a class="btn" href="medications.html">Explore Medications</a>
+          <a class="btn outline" href="ask.html">Ask a Pharmacist</a>
+        </p>
+      </div>
+      <div class="hero-right">
+        <img src="assets/images/hero-pharma.webp" alt="Pharmaceutical care illustration" class="hero-image" loading="lazy">
+      </div>
+    </section>
+
+    <section class="featured">
+      <h2>Featured safety tips</h2>
+      <div class="cards mini-cards">
+        <article class="card">
+          <h3>Keep track of doses</h3>
+          <p>Maintain a medication log to avoid accidental double-dosing. Use reminders when necessary.</p>
+        </article>
+
+        <article class="card">
+          <h3>Store correctly</h3>
+          <p>Store medicines at recommended temperatures and away from children and pets.</p>
+        </article>
+
+        <article class="card">
+          <h3>Dispose safely</h3>
+          <p>Do not flush medicines. Follow local disposal guidelines or pharmacy take-back programs.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="preview">
+      <h2>Medication Index Preview</h2>
+      <p>Quick search and browse the medication info center — dynamic cards load from a local database.</p>
+      <p><a class="btn" href="medications.html">Open Medication Info</a></p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© <span id="year"></span> PharmaCare | Author: Maria Carmela Gaela | <a href="attribution.html">Attributions</a> | <a id="demo-link" href="https://drive.google.com/file/d/1G6hpHBa7-Oy1Z0qaGEgYORGRfazit1f1/view?usp=sharing" target="_blank" rel="noopener">Project Demo</a></p>
+      <p class="muted">Hosted on GitHub: <a href="https://carmelagaela.github.io/finalproject" target="_blank" rel="noopener">carmelagaela.github.io/finalproject</a></p>
+    </div>
+  </footer>
+
+  <script>
+    // small inline for nav toggle + year
+    document.getElementById('year').textContent = new Date().getFullYear();
+    const navToggle = document.getElementById('nav-toggle');
+    const primaryNav = document.getElementById('primary-nav');
+    navToggle.addEventListener('click', () => {
+      const expanded = navToggle.getAttribute('aria-expanded') === 'true';
+      navToggle.setAttribute('aria-expanded', String(!expanded));
+      primaryNav.classList.toggle('open');
+    });
+  </script>
+</body>
+</html>
